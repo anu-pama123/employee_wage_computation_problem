@@ -193,3 +193,29 @@ else nonWorkingDays.push(key);
 console.log("Full working days:" + fullWorkingDays);
 console.log("Part working days: " + partWorkingdays);
 console.log("Non working days: " + nonWorkingDays);
+
+//uc 11
+class EmployeePayrollData {
+// id;
+// salary;
+constructor(id, name, salary) {
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+get name() { 
+return this._name;
+}
+set name(name) {
+this._name = name;
+}
+toString() {
+return "id=" + this.id + ", name=" + this.name + ", salary=" + this.Salary;
+}
+}
+
+EmployeePayrollData = new EmployeePayrollData(1, "Mark", 300000);
+console.log(EmployeePayrollData.toString());
+EmployeePayrollData.name = "John";
+console.log(EmployeePayrollData.toString());
+
