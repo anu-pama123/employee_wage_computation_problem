@@ -88,4 +88,61 @@ function calcDailyWage(empHrs) {
     
     empWage = calcDailyWage(totalEmpHrs);
     console.log("uc6 - Total Days: " + totalWorkingDays + " ,Total Hrs: " + totalEmpHrs + " ,Emp wage: " + empWage);
-    
+ 
+//uc7A
+let totEmpWage = 0;
+function sum(dailyWage) {
+totEmpWage == dailyWage;
+}
+empDailyWageArr.forEach(sum);
+console.log("uc7A - Total days: " + totalWorkingDays + " ,Total hrs: " + totalEmpHrs +" ,Emp wage: " + totEmpWage);
+
+function totalWages(totalWages, dailyWage) {
+return totalWages + dailyWage;
+}
+
+console.log("uc7A - Emp wage with reduse: " + empDailyWageArr.reduce(totalWages, 0));
+
+//uc 7B
+let dailyCntr = 0;
+function mapDayWithWage(dailyWage) {
+dailyCntr++;
+return dailyCntr + " = " + dailyWage;
+}
+let mapDayWithWageArr = empDailyWageArr.map(mapDayWithWage);
+console.log("uc7B - Daily wage map");
+console.log(mapDayWithWageArr);
+
+//uc 7C 
+function fulltimeWage(dailyWage) {
+return dailyWage.includes("160");
+}
+let fullDayWageArr = mapDayWithWageArr.filter(fulltimeWage);
+console.log("uc7C - Daily wage filter when fulltime wage earned");
+console.log(fullDayWageArr);
+
+//uc 7D
+function findFulltimewage(dailyWage) {
+return dailyWage.includes("160");
+}
+console.log("uc 7D - First time fulltime wage was earned on day: " + mapDayWithWageArr.find(findFulltimewage));
+
+//uc 7E
+function isAllFulltimeWage(dailyWage) {
+return dailyWage.includes("160");
+}
+console.log("uc 7E - Check all element have full time wage:" + fullDayWageArr.every(isAllFulltimeWage));
+
+//uc 7F
+function isAnyPartTimmeWage(dailyWage) {
+return dailyWage.includes("80");
+}
+console.log("uc 7F - Check if any part time wage: " + mapDayWithWageArr.some(isAnyPartTimmeWage));
+
+//uc 7G
+function totalDaysWorked(numOfDays, dailyWage) {
+if(dailyWage >0) return numOfDays+1;
+return numOfDays;
+}
+console.log("uc 7G - Number of days emp worked: " + empDailyWageArr.reduce(totalDaysWorked, 0));
+   
