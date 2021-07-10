@@ -237,7 +237,10 @@ class EmployeePayrollData2 {
         return this._name;
     }
     set name(name) {
-        this._name = name;
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if (nameRegex.test(name))
+            this._name = name;
+            else throw "Name is incorrect"; 
     }
     toString() {
         return "id=" + this.id + ", name=" + this.name + ", salary=" + this.Salary;
